@@ -28,28 +28,28 @@ void set_dir (int x, int y, cardd dir)
 }
 
 //Liefert die Himmelsrichtung als char-Array (String)
-char* convertToCardinalpoint(cardd dir)
+char * convertToCardinalpoint(cardd dir)
 {
 	 switch((int)dir)
     {
         case N:
-            return "N";
+            return "    N    ";
         case W:
-            return "W";
+            return "    W    ";   
         case E:
-            return "E";
+            return "    E    ";
         case S:
-            return "S";
+            return "    S    ";
         case N|W:
-            return "NW";
+            return "    NW   ";
         case N|E:
-            return "NE";
+            return "    NE   ";
         case S|W:
-            return "SW";
+            return "    SW   ";
         case S|E:
-            return "SE";
+            return "    SE   ";
         default:
-            return "0";
+            return "    0    ";
     }	
 }
 
@@ -63,11 +63,12 @@ void show_map (void)
 			
             cardd dir;
             dir = map[i][j];
-			char** direction = convertToCardinalpoint(dir);
-			printf("%s ", direction);
+			//char[] direction = convertToCardinalpoint(dir);
+			printf("%s ", convertToCardinalpoint(dir));
 		}
 		printf("\n");
 	}
+	printf("\n");
 }
 
 
